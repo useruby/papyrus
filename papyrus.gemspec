@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.date = %q{2011-06-27}
   s.description = %q{Library helps to organize search through your documents, filtering by tags and authors. Library based on sphinx search.}
   s.email = %q{i@useruby.com}
+  s.executables = ["papyrus"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -20,12 +21,38 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
+    "bin/papyrus",
     "lib/papyrus.rb",
+    "lib/papyrus/crc32.rb",
+    "lib/papyrus/document.rb",
+    "lib/papyrus/document/export.rb",
+    "lib/papyrus/document/metadata.rb",
+    "lib/papyrus/folder.rb",
+    "lib/papyrus/folder/export.rb",
+    "lib/papyrus/folder/index.rb",
+    "lib/papyrus/folder/index_source.rb",
+    "lib/papyrus/folder/sphinx.rb",
+    "lib/papyrus/settings.rb",
+    "lib/papyrus/sphinx/config.rb",
+    "papyrus.gemspec",
+    "spec/papyrus/document_spec.rb",
+    "spec/papyrus/folder_spec.rb",
+    "spec/papyrus/settings_spec.rb",
+    "spec/papyrus/sphinx/config_spec.rb",
     "spec/papyrus_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/samples/conf/papyrus.conf",
+    "spec/samples/documents/test/01.html.haml",
+    "spec/samples/documents/test/02.html.haml",
+    "spec/spec_helper.rb",
+    "spec/support/papyrus_conf.rb",
+    "spec/support/start_papyrus.rb",
+    "tasks/distribution.rb",
+    "tasks/testing.rb"
   ]
   s.homepage = %q{http://github.com/useruby/papyrus}
   s.licenses = ["MIT"]
