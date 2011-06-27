@@ -1,0 +1,108 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+require 'papyrus'
+
+# TODO: remove ruby debug from release version
+require 'ruby-debug'
+
+opts = Slop.parse do
+  banner 'Usage: papyrus --config <configuration_file> [options]'
+  on :c, :config, 'Papyrus configuration file', :optional => false
+  on :g, :generate_sphinx_config, 'Generate sphinx configuration'
+  on :e, :export, 'Generate data for indexing', :optional => true
+  on :s, :start, 'Start papyrus'
+  on :i, :index, 'Generate index', :optional => true
+  on :stop, 'Stop papyrus'
+  on :samples_dir, 'this option using only for testing purpose', :optional => true
+end
+
+def generate_sphinx_config
+  print "Generating sphinx configuration...\n" 
+  Papyrus::Sphinx::Config.generate
+  print "Done.\n"
+end
+
+def create_directory
+  # create directory for pid and logs files
+  [
+    File.dirname(Papyrus::Settings.searchd_pid), 
+    File.dirname(Papyrus::Settings.query_log),
+    File.dirname(Papyrus::Settings.searchd_log),
+    Papyrus::Settings.indexes_root
+  ].uniq.each {|dir| Dir.mkdir dir unless File.exist? dir}
+end
+
+def start_spinx_daemon
+  create_directory
+
+  @sphinx_controller.start
+end
+
+def stop_sphinx_daemon
+  @sphinx_controller.stop
+end
+
+if opts[:samples_dir]
+  Papyrus::Settings::SAMPLES_DIR = opts[:samples_dir]
+end
+
+# load application settings
+if opts.config?
+  Papyrus::Settings.source opts[:config] 
+  Papyrus::Settings.load!
+  Papyrus::Settings[:config_filename] = File.expand_path opts[:config]
+  Papyrus::Settings[:cmd] = File.expand_path __FILE__
+
+  @sphinx_controller = Riddle::Controller.new(Papyrus::Sphinx::Config.new, Papyrus::Settings.sphinx_conf)
+else
+  print "#{opts.help}\n\n"
+  exit false
+end
+
+if opts.generate_sphinx_config?
+  generate_sphinx_config
+
+  exit
+end
+
+if opts[:export]
+  folder = Papyrus::Folder.new opts[:export]
+  print folder.to_sphinx_xml
+
+  exit
+end
+
+if opts.start?
+  print "Starting papyrus...\n"
+
+  generate_sphinx_config
+  start_spinx_daemon
+
+  exit
+end
+
+if opts.stop?
+  print "Stopping papyrus...\n"
+  
+  stop_sphinx_daemon
+
+  exit
+end
+
+if opts.index?
+  print "Indexing... \n"
+
+  generate_sphinx_config
+  create_directory
+
+  if opts[:index]
+    @sphinx_controller.index opts[:index]
+  else
+    @sphinx_controller.index '--all'
+  end
+
+  print "Done\n"
+  exit
+end

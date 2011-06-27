@@ -1,0 +1,35 @@
+[Thu Jun 23 23:13:24.411 2011] [26653] accepting connections
+[Thu Jun 23 23:19:44.296 2011] [26653] caught SIGTERM, shutting down
+[Thu Jun 23 23:19:44.393 2011] [26653] shutdown complete
+[Thu Jun 23 23:20:10.371 2011] [26718] accepting connections
+[Thu Jun 23 23:20:33.089 2011] [26718] rotating indices (seamless=1)
+[Thu Jun 23 23:20:33.095 2011] [26718] rotating index 'test': success
+[Thu Jun 23 23:20:33.095 2011] [26718] rotating finished
+[Thu Jun 23 23:35:11.391 2011] [26718] caught SIGTERM, shutting down
+[Thu Jun 23 23:35:11.431 2011] [26718] shutdown complete
+[Fri Jun 24 19:34:14.333 2011] [ 4829] accepting connections
+[Fri Jun 24 23:00:37.247 2011] [ 8308] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Fri Jun 24 23:02:15.984 2011] [ 8337] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Sat Jun 25 11:23:35.678 2011] [ 8522] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Mon Jun 27 13:02:26.761 2011] [28800] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Mon Jun 27 13:04:18.727 2011] [28827] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Mon Jun 27 13:04:30.932 2011] [28828] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Mon Jun 27 13:05:35.958 2011] [28830] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Mon Jun 27 13:05:39.266 2011] [28831] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Mon Jun 27 13:05:39.801 2011] [28832] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Mon Jun 27 13:05:40.127 2011] [28833] FATAL: INTERNAL ERROR: unknown matching mode (mode=5)
+[Mon Jun 27 16:41:19.197 2011] [30387] accepting connections
+[Mon Jun 27 22:04:52.858 2011] [30387] caught SIGTERM, shutting down
+[Mon Jun 27 22:04:52.859 2011] [30387] shutdown complete
+[Mon Jun 27 22:12:46.366 2011] [32024] accepting connections
+[Mon Jun 27 22:12:59.508 2011] [32024] caught SIGTERM, shutting down
+[Mon Jun 27 22:12:59.508 2011] [32024] shutdown complete
+[Mon Jun 27 22:13:33.270 2011] [32116] accepting connections
+[Mon Jun 27 22:28:23.679 2011] [32116] caught SIGTERM, shutting down
+[Mon Jun 27 22:28:23.680 2011] [32116] shutdown complete
+[Mon Jun 27 22:28:36.354 2011] [32264] accepting connections
+[Mon Jun 27 22:28:39.449 2011] [32264] caught SIGTERM, shutting down
+[Mon Jun 27 22:28:39.450 2011] [32264] shutdown complete
+[Mon Jun 27 23:00:18.749 2011] [  521] accepting connections
+[Mon Jun 27 23:00:21.829 2011] [  521] caught SIGTERM, shutting down
+[Mon Jun 27 23:00:21.829 2011] [  521] shutdown complete
