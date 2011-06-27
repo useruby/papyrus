@@ -20,6 +20,12 @@ tmp
 # vendor directory
 vendor
 
+# generated files for(by) sphinx 
+spec/samples/indexes
+spec/samples/log
+spec/samples/pid
+spec/samples/conf/sphinx.conf
+
 # Have editor/IDE/OS specific files you need to ignore? Consider using a global gitignore: 
 #
 # * Create a file at ~/.gitignore
