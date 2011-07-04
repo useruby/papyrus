@@ -4,7 +4,7 @@ module Papyrus
       source = Riddle::Configuration::XMLSource.new name, 'xmlpipe2'
       source.xmlpipe_command = "#{Papyrus::Settings.cmd} -c #{Papyrus::Settings.config_filename} -e #{name}"
 
-      source.xmlpipe_command += " --samples_dir #{Papyrus::Settings::SAMPLES_DIR}" if defined?(Papyrus::Settings::SAMPLES_DIR)
+      source.xmlpipe_command += " --base_dir #{Papyrus::Settings::BASE_DIR}" if defined?(Papyrus::Settings::BASE_DIR)
 
       super name, source
 

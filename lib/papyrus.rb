@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'bundler/setup'
 
-Bundler.require :default
+require 'settingslogic'
+require 'riddle'
+require 'haml'
 
 require 'papyrus/settings'
 require 'papyrus/crc32'

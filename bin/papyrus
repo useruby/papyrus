@@ -3,9 +3,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'papyrus'
-
-# TODO: remove ruby debug from release version
-require 'ruby-debug'
+require 'slop'
 
 opts = Slop.parse do
   banner 'Usage: papyrus --config <configuration_file> [options]'
@@ -15,7 +13,7 @@ opts = Slop.parse do
   on :s, :start, 'Start papyrus'
   on :i, :index, 'Generate index', :optional => true
   on :stop, 'Stop papyrus'
-  on :samples_dir, 'this option using only for testing purpose', :optional => true
+  on :base_dir, 'Set base dir for using in papyrus configuration file', :optional => true
 end
 
 def generate_sphinx_config
@@ -44,8 +42,8 @@ def stop_sphinx_daemon
   @sphinx_controller.stop
 end
 
-if opts[:samples_dir]
-  Papyrus::Settings::SAMPLES_DIR = opts[:samples_dir]
+if opts[:base_dir]
+  Papyrus::Settings::BASE_DIR = File.expand_path opts[:base_dir]
 end
 
 # load application settings
@@ -100,7 +98,7 @@ if opts.index?
   if opts[:index]
     @sphinx_controller.index opts[:index]
   else
-    @sphinx_controller.index '--all'
+    @sphinx_controller.index
   end
 
   print "Done\n"

@@ -16,6 +16,6 @@ end
 
 at_exit do
   if File.size? Papyrus::Settings.searchd_pid
-    system "#{Papyrus::Settings.cmd} -c #{Papyrus::Settings.config_filename} --samples_dir #{Papyrus::Settings::SAMPLES_DIR} --stop"
+    system "#{Papyrus::Settings.cmd} -c #{Papyrus::Settings.config_filename} --base_dir #{Papyrus::Settings::BASE_DIR} --stop"
   end
 end
