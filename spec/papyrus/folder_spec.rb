@@ -17,6 +17,14 @@ describe Papyrus::Folder do
       end
     end
 
+    describe 'document' do
+      it 'should return document from folder by id' do
+        document = @folder.document '01'
+        document.should_not be_nil
+        document.title.should == 'Test Document 01'
+      end
+    end
+
     describe '#find_all' do
       it 'should return all documents from folder' do
         documents = @folder.find_all

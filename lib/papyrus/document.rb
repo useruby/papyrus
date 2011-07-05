@@ -19,6 +19,8 @@ module Papyrus
     def render
       haml_engine = Haml::Engine.new template
       @body = haml_engine.render(self)
+      
+      self
     end
 
     private

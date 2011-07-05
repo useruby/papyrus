@@ -24,6 +24,10 @@ module Papyrus
       end
     end
 
+    def document id
+      Papyrus::Document.new(:filename => "#{path}/#{id}.html.haml").render
+    end
+
     def find_all
       query
     end
