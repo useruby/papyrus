@@ -35,7 +35,6 @@ Gem::Specification.new do |s|
     "lib/papyrus/folder.rb",
     "lib/papyrus/folder/export.rb",
     "lib/papyrus/folder/index.rb",
-    "lib/papyrus/folder/index_source.rb",
     "lib/papyrus/folder/sphinx.rb",
     "lib/papyrus/settings.rb",
     "lib/papyrus/sphinx/config.rb",
