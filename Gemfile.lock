@@ -4,8 +4,9 @@ GIT
   specs:
     require_relative (1.0.2)
 
-PATH
-  remote: /home/www/github/riddle
+GIT
+  remote: git://github.com/useruby/riddle.git
+  revision: 8796e4b44994f9df69e879024b92137210882aff
   specs:
     riddle (1.3.3)
 

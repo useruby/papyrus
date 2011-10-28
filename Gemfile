@@ -6,8 +6,7 @@ source "http://rubygems.org"
 gem 'bundler', '~> 1.0.0'
 
 gem 'haml'
-#gem 'riddle', :require => ['riddle', 'riddle/2.0.1'], :git => 'git://github.com/useruby/riddle.git'
-gem 'riddle', :path => '/home/www/github/riddle'
+gem 'riddle', :require => ['riddle', 'riddle/2.0.1'], :git => 'git://github.com/useruby/riddle.git'
 gem 'slop'
 gem 'settingslogic'
 
